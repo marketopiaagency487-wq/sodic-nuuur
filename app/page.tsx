@@ -259,7 +259,7 @@ export default function Page() {
       {/* ANNOUNCEMENT */}
       {bar && (
         <div className="bg-sodic text-white text-[13px] font-semibold text-center py-2.5 px-10 relative leading-relaxed">
-          مطروح الآن: المرحلة الجديدة في سوديك إيست — <N>7</N> نوعيات وحدات · مقدم <N>1.5%</N> · EOI مفتوح
+         طرح جديد: المرحلة الجديدة في سوديك إيست — <N>7</N> نوعيات وحدات · مقدم <N>1.5%</N> · EOI مفتوح
           <button onClick={() => setBar(false)} aria-label="إغلاق"
             className="absolute top-1/2 -translate-y-1/2 start-3 w-6 h-6 rounded-full bg-white/20 text-white border-0 cursor-pointer text-[13px] leading-none">✕</button>
         </div>
