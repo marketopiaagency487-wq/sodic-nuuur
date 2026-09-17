@@ -1,15 +1,15 @@
 /* ═══════════════════════════════════════════════════════════
    ①  الإعدادات
    ═══════════════════════════════════════════════════════════ */
-export const SITE_URL = "https://example.com";
-export const PHONE_DISPLAY = "01000000000";
-export const PHONE_INTL = "+201000000000";
-export const WA_NUMBER = "201000000000";
-export const WEB3_KEY = "PUT-YOUR-WEB3FORMS-KEY-HERE";
+export const SITE_URL = "https://www.sodic-projects.org/";
+export const PHONE_DISPLAY = "01117322733";
+export const PHONE_INTL = "+201117322733";
+export const WA_NUMBER = "201117322733";
+export const WEB3_KEY = "33d03dae-c858-44eb-9c81-d6a5ea70a45a";
 
 export const AGENT_AR = "جراندير سبيسز";
 export const AGENT_EN = "Grandeur Spaces";
-export const AGENT_EMAIL = "info@example.com";
+export const AGENT_EMAIL = "info@sodic-projects.org";
 
 export const wa = (m: string) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(m)}`;
 export const WA_MAIN = wa("مهتم بالمرحلة الجديدة في سوديك إيست. برجاء إرسال جدول الأسعار والماستر بلان.");
