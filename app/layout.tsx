@@ -11,8 +11,21 @@ const CONV_CALL = `${ADS_ID}/XXXXXXXXXXXXXXXXXXX`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  title: "سوديك إيست المرحلة الجديدة 2026 | أسعار تبدأ من 6,700,000 ومقدم 1.5%",
+  description:
+    "المرحلة الجديدة في سوديك إيست على أكثر من 65 فداناً بتشطيب Flexi. 7 نوعيات وحدات من 76 حتى 200 م²، أسعار تبدأ من 6,700,000 جنيه، مقدم 1.5% وتقسيط حتى 10 سنوات، وجدية حجز 50,000 جنيه. وكيل مبيعات معتمد لدى سوديك — لسنا الشركة المطوّرة.",
+  alternates: { canonical: "/" },
   robots: { index: true, follow: true },
-  openGraph: { siteName: AGENT_EN, locale: "ar_EG", type: "website" },
+  openGraph: {
+    title: "سوديك إيست — المرحلة الجديدة | مقدم 1.5% وتقسيط 10 سنوات",
+    description:
+      "7 نوعيات وحدات من 76 حتى 200 م² وأسعار تبدأ من 6,700,000 جنيه. EOI مفتوح — التخصيص بأولوية التسجيل.",
+    url: SITE_URL,
+    siteName: AGENT_EN,
+    locale: "ar_EG",
+    type: "website",
+    images: ["/images/hero.webp"],
+  },
 };
 
 const JSONLD = {
