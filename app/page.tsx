@@ -154,7 +154,7 @@ function Calculator() {
         </div>
       </div>
 
-      <div className="card p-6 md:p-8 bg-coal border-coal text-white">
+      <div className="rounded-[10px] border border-white/12 bg-coal text-white p-6 md:p-8">
         <p className="text-white/50 text-[13px] mb-1">{u.name} — <N>{u.area}</N> م²</p>
         <p className="font-[family-name:var(--font-display)] font-extrabold text-[26px] text-sodic-sky mb-6"><N>{fmt(u.price)}</N> <span className="text-[15px] text-white/50">ج</span></p>
         <dl className="grid grid-cols-2 gap-x-6">
