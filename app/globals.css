@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════
+   SODIC brand — Bondi Blue #0088B4 / White / Black
+   ═══════════════════════════════════════════════════ */
+@theme {
+  --color-sodic: #0088b4;
+  --color-sodic-2: #00a0d2;
+  --color-sodic-d: #006287;
+  --color-sodic-sky: #7cc9e4;
+  --color-wash: #e9f5fa;
+
+  --color-coal: #0a0c0e;
+  --color-coal-2: #15181b;
+  --color-ink: #12161a;
+
+  --color-paper: #ffffff;
+  --color-soft: #f5f8fa;
+  --color-line: #dfe7ec;
+  --color-line-2: #c6d4dd;
+  --color-muted: #66717a;
+  --color-wa: #25d366;
+
+  --font-display: "Noto Kufi Arabic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-num: "Archivo", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.28; }
+:focus-visible { outline: 3px solid var(--color-sodic); outline-offset: 3px; border-radius: 4px; }
+
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  direction: ltr; unicode-bidi: isolate; display: inline-block;
+}
+
+.label {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em;
+  color: var(--color-sodic); margin-bottom: 14px;
+}
+.label::before { content: ""; width: 34px; height: 2px; background: var(--color-sodic); flex-shrink: 0; }
+.label-light { color: var(--color-sodic-sky); }
+.label-light::before { background: var(--color-sodic-sky); }
+
+.btn {
+  font-family: var(--font-body); font-weight: 700; font-size: 15px;
+  padding: 14px 28px; border: 0; border-radius: 6px; cursor: pointer;
+  text-decoration: none; display: inline-flex; align-items: center;
+  justify-content: center; gap: 9px; line-height: 1.4;
+  transition: background .18s, color .18s, border-color .18s, filter .18s;
+}
+.btn-sodic { background: var(--color-sodic); color: #fff; }
+.btn-sodic:hover { background: var(--color-sodic-2); }
+.btn-coal { background: var(--color-coal); color: #fff; }
+.btn-coal:hover { background: #262b30; }
+.btn-wa { background: var(--color-wa); color: #fff; }
+.btn-wa:hover { filter: brightness(0.93); }
+.btn-line { background: transparent; color: var(--color-sodic-d); border: 1.5px solid var(--color-line-2); }
+.btn-line:hover { border-color: var(--color-sodic); background: var(--color-wash); }
+.btn-ghost { background: rgba(255,255,255,0.1); color: #fff; border: 1.5px solid rgba(255,255,255,0.3); }
+.btn-ghost:hover { background: rgba(255,255,255,0.18); }
+
+.card { background: #fff; border: 1px solid var(--color-line); border-radius: 10px; overflow: hidden; }
+
+.badge {
+  display: inline-block; font-size: 12.5px; font-weight: 700;
+  padding: 6px 14px; border-radius: 999px; background: var(--color-sodic); color: #fff;
+}
+.badge-coal { background: var(--color-coal); }
+.badge-sky { background: var(--color-sodic-sky); color: var(--color-sodic-d); }
+
+.fld {
+  width: 100%; font-family: var(--font-body); font-size: 15px;
+  padding: 13px 15px; background: #fff;
+  border: 1.5px solid var(--color-line-2); border-radius: 6px;
+  color: var(--color-ink); transition: border-color .18s;
+}
+.fld:focus { border-color: var(--color-sodic); outline: none; }
+.fld::placeholder { color: #98a2b3; }
+
+.hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
+.acc { overflow: hidden; max-height: 0; transition: max-height .3s ease; }
+.acc.open { max-height: 640px; }
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1); }
+.reveal.in { opacity: 1; transform: none; }
+@keyframes kb { from { transform: scale(1); } to { transform: scale(1.07); } }
+.kenburns { animation: kb 24s ease-out forwards; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .kenburns { animation: none; }
+}
+
+.scroll-x { overflow-x: auto; scrollbar-width: none; }
+.scroll-x::-webkit-scrollbar { display: none; }
+
+/* Price table */
+.ptab { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.ptab th {
+  background: var(--color-wash); color: var(--color-sodic-d);
+  font-family: var(--font-display); font-weight: 700; font-size: 13px;
+  padding: 13px 14px; text-align: start; white-space: nowrap;
+}
+.ptab td { padding: 14px; border-bottom: 1px solid var(--color-line); }
+.ptab tr:last-child td { border-bottom: 0; }
+.ptab tbody tr:hover { background: var(--color-soft); }
+
+/* Floating side actions */
+.fab-stack {
+  position: fixed; inset-inline-end: 22px; bottom: 26px; z-index: 95;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.fab {
+  position: relative; width: 54px; height: 54px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; color: #fff;
+  box-shadow: 0 6px 22px rgba(10,12,14,0.3); transition: transform .2s;
+}
+.fab:hover { transform: scale(1.08); }
+.fab-wa { background: var(--color-wa); }
+.fab-call { background: var(--color-sodic); }
+.fab-top { background: var(--color-coal); }
+.fab-tip {
+  position: absolute; inset-inline-end: 64px; white-space: nowrap;
+  background: var(--color-coal); color: #fff; font-size: 12.5px; font-weight: 600;
+  padding: 7px 13px; border-radius: 5px; opacity: 0; pointer-events: none;
+  transform: translateX(6px); transition: opacity .2s, transform .2s;
+}
+.fab:hover .fab-tip { opacity: 1; transform: translateX(0); }
+.fab-wa::after {
+  content: ""; position: absolute; inset: -4px; border-radius: 50%;
+  border: 2px solid var(--color-wa); opacity: 0;
+  animation: fabring 2.8s ease-out infinite;
+}
+@keyframes fabring { 0% { opacity: .55; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.35); } }
+@media (prefers-reduced-motion: reduce) { .fab-wa::after { animation: none; } .fab:hover { transform: none; } }
+@media (max-width: 767px) { .fab-stack { display: none; } }
